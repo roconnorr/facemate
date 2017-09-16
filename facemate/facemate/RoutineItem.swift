@@ -10,8 +10,8 @@ import Foundation
 
 class RoutineItem {
     
-    private var startDate: Date
-    private var interval: String
+    var startDate: Date
+    var interval: String
     
     init(startDate: Date, interval: String) {
         self.startDate = startDate

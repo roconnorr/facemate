@@ -130,6 +130,7 @@
 				TargetAttributes = {
 					1E3F22C81F6D0D1B0099699E = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = UE58Z3RJY3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -302,7 +303,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UE58Z3RJY3;
 				INFOPLIST_FILE = facemate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsoft.facemate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -314,7 +317,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UE58Z3RJY3;
 				INFOPLIST_FILE = facemate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsoft.facemate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
