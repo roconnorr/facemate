@@ -1,0 +1,730 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E077D641F302DA2002F6866 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E077D631F302DA2002F6866 /* AppDelegate.swift */; };
+		1E077D6D1F302DA2002F6866 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E077D6B1F302DA2002F6866 /* Main.storyboard */; };
+		1E077D6F1F302DA2002F6866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E077D6E1F302DA2002F6866 /* Assets.xcassets */; };
+		1E077D721F302DA2002F6866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E077D701F302DA2002F6866 /* LaunchScreen.storyboard */; };
+		1E077D7D1F302DA2002F6866 /* facemate_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E077D7C1F302DA2002F6866 /* facemate_testTests.swift */; };
+		1E077D881F302DA2002F6866 /* facemate_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E077D871F302DA2002F6866 /* facemate_testUITests.swift */; };
+		1E0D89A91F52A30F00D900C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D89A81F52A30F00D900C3 /* ViewController.swift */; };
+		1EB376761F52A14F00C7A887 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB376751F52A14F00C7A887 /* CustomCell.swift */; };
+		4FD672AEAD45E2516E4AD795 /* Pods_facemate_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8046A509DE39A2442B51077 /* Pods_facemate_test.framework */; };
+		BC3459BBD53C2CAFB68FB437 /* Pods_facemate_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DEC6F19DF37A48D1DD0DF7 /* Pods_facemate_testUITests.framework */; };
+		BD693F6CF24C897B60BC77CF /* Pods_facemate_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD181BD58F3ADAA66E263629 /* Pods_facemate_testTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E077D791F302DA2002F6866 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E077D581F302DA2002F6866 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E077D5F1F302DA2002F6866;
+			remoteInfo = "facemate-test";
+		};
+		1E077D841F302DA2002F6866 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E077D581F302DA2002F6866 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E077D5F1F302DA2002F6866;
+			remoteInfo = "facemate-test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18F86F5323EE5776C2AC4EE1 /* Pods-facemate-testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-facemate-testUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-facemate-testUITests/Pods-facemate-testUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1E077D601F302DA2002F6866 /* facemate-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "facemate-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E077D631F302DA2002F6866 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1E077D6C1F302DA2002F6866 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1E077D6E1F302DA2002F6866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E077D711F302DA2002F6866 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1E077D731F302DA2002F6866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E077D781F302DA2002F6866 /* facemate-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "facemate-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E077D7C1F302DA2002F6866 /* facemate_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = facemate_testTests.swift; sourceTree = "<group>"; };
+		1E077D7E1F302DA2002F6866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E077D831F302DA2002F6866 /* facemate-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "facemate-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E077D871F302DA2002F6866 /* facemate_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = facemate_testUITests.swift; sourceTree = "<group>"; };
+		1E077D891F302DA2002F6866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E0D89A81F52A30F00D900C3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1EB376751F52A14F00C7A887 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		52DEC6F19DF37A48D1DD0DF7 /* Pods_facemate_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_facemate_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BA3CA4A5BE9B06F61EA08C0 /* Pods-facemate-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-facemate-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-facemate-test/Pods-facemate-test.debug.xcconfig"; sourceTree = "<group>"; };
+		8388BC5360AF5C3E1CCF3321 /* Pods-facemate-testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-facemate-testUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-facemate-testUITests/Pods-facemate-testUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		87EB1B4313D2D6E69CC126A6 /* Pods-facemate-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-facemate-testTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-facemate-testTests/Pods-facemate-testTests.release.xcconfig"; sourceTree = "<group>"; };
+		A9697988EA08E552FAB3235B /* Pods-facemate-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-facemate-testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-facemate-testTests/Pods-facemate-testTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD181BD58F3ADAA66E263629 /* Pods_facemate_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_facemate_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2164AD136BFC86B15CB4D66 /* Pods-facemate-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-facemate-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-facemate-test/Pods-facemate-test.release.xcconfig"; sourceTree = "<group>"; };
+		B8046A509DE39A2442B51077 /* Pods_facemate_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_facemate_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E077D5D1F302DA2002F6866 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FD672AEAD45E2516E4AD795 /* Pods_facemate_test.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E077D751F302DA2002F6866 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD693F6CF24C897B60BC77CF /* Pods_facemate_testTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E077D801F302DA2002F6866 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC3459BBD53C2CAFB68FB437 /* Pods_facemate_testUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F1D018344228A5BB360A48A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7BA3CA4A5BE9B06F61EA08C0 /* Pods-facemate-test.debug.xcconfig */,
+				B2164AD136BFC86B15CB4D66 /* Pods-facemate-test.release.xcconfig */,
+				A9697988EA08E552FAB3235B /* Pods-facemate-testTests.debug.xcconfig */,
+				87EB1B4313D2D6E69CC126A6 /* Pods-facemate-testTests.release.xcconfig */,
+				8388BC5360AF5C3E1CCF3321 /* Pods-facemate-testUITests.debug.xcconfig */,
+				18F86F5323EE5776C2AC4EE1 /* Pods-facemate-testUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1E077D571F302DA2002F6866 = {
+			isa = PBXGroup;
+			children = (
+				1E077D621F302DA2002F6866 /* facemate-test */,
+				1E077D7B1F302DA2002F6866 /* facemate-testTests */,
+				1E077D861F302DA2002F6866 /* facemate-testUITests */,
+				1E077D611F302DA2002F6866 /* Products */,
+				0F1D018344228A5BB360A48A /* Pods */,
+				AF2DDFED07540F3A06E97279 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1E077D611F302DA2002F6866 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E077D601F302DA2002F6866 /* facemate-test.app */,
+				1E077D781F302DA2002F6866 /* facemate-testTests.xctest */,
+				1E077D831F302DA2002F6866 /* facemate-testUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E077D621F302DA2002F6866 /* facemate-test */ = {
+			isa = PBXGroup;
+			children = (
+				1E0D89A81F52A30F00D900C3 /* ViewController.swift */,
+				1E077D631F302DA2002F6866 /* AppDelegate.swift */,
+				1E077D6B1F302DA2002F6866 /* Main.storyboard */,
+				1E077D6E1F302DA2002F6866 /* Assets.xcassets */,
+				1E077D701F302DA2002F6866 /* LaunchScreen.storyboard */,
+				1E077D731F302DA2002F6866 /* Info.plist */,
+				1EB376751F52A14F00C7A887 /* CustomCell.swift */,
+			);
+			path = "facemate-test";
+			sourceTree = "<group>";
+		};
+		1E077D7B1F302DA2002F6866 /* facemate-testTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E077D7C1F302DA2002F6866 /* facemate_testTests.swift */,
+				1E077D7E1F302DA2002F6866 /* Info.plist */,
+			);
+			path = "facemate-testTests";
+			sourceTree = "<group>";
+		};
+		1E077D861F302DA2002F6866 /* facemate-testUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1E077D871F302DA2002F6866 /* facemate_testUITests.swift */,
+				1E077D891F302DA2002F6866 /* Info.plist */,
+			);
+			path = "facemate-testUITests";
+			sourceTree = "<group>";
+		};
+		AF2DDFED07540F3A06E97279 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8046A509DE39A2442B51077 /* Pods_facemate_test.framework */,
+				AD181BD58F3ADAA66E263629 /* Pods_facemate_testTests.framework */,
+				52DEC6F19DF37A48D1DD0DF7 /* Pods_facemate_testUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E077D5F1F302DA2002F6866 /* facemate-test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E077D8C1F302DA2002F6866 /* Build configuration list for PBXNativeTarget "facemate-test" */;
+			buildPhases = (
+				4C2C49FE714E4E8C765BEC8B /* [CP] Check Pods Manifest.lock */,
+				1E077D5C1F302DA2002F6866 /* Sources */,
+				1E077D5D1F302DA2002F6866 /* Frameworks */,
+				1E077D5E1F302DA2002F6866 /* Resources */,
+				6021A9B670B7F62635ED59C7 /* [CP] Embed Pods Frameworks */,
+				3B90B4A5E828F774BCEA3372 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "facemate-test";
+			productName = "facemate-test";
+			productReference = 1E077D601F302DA2002F6866 /* facemate-test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E077D771F302DA2002F6866 /* facemate-testTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E077D8F1F302DA2002F6866 /* Build configuration list for PBXNativeTarget "facemate-testTests" */;
+			buildPhases = (
+				3ED59B8913631BC1AA7E9960 /* [CP] Check Pods Manifest.lock */,
+				1E077D741F302DA2002F6866 /* Sources */,
+				1E077D751F302DA2002F6866 /* Frameworks */,
+				1E077D761F302DA2002F6866 /* Resources */,
+				E3D3994C8367A4E8EF514D19 /* [CP] Embed Pods Frameworks */,
+				8D80E6ECA2FC376CDDA28B52 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E077D7A1F302DA2002F6866 /* PBXTargetDependency */,
+			);
+			name = "facemate-testTests";
+			productName = "facemate-testTests";
+			productReference = 1E077D781F302DA2002F6866 /* facemate-testTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1E077D821F302DA2002F6866 /* facemate-testUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E077D921F302DA2002F6866 /* Build configuration list for PBXNativeTarget "facemate-testUITests" */;
+			buildPhases = (
+				148153F18DD67D29E5A50CCD /* [CP] Check Pods Manifest.lock */,
+				1E077D7F1F302DA2002F6866 /* Sources */,
+				1E077D801F302DA2002F6866 /* Frameworks */,
+				1E077D811F302DA2002F6866 /* Resources */,
+				6C1C8235A730861CD3EA26C9 /* [CP] Embed Pods Frameworks */,
+				5A43EFE4043CB427A056C4E3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E077D851F302DA2002F6866 /* PBXTargetDependency */,
+			);
+			name = "facemate-testUITests";
+			productName = "facemate-testUITests";
+			productReference = 1E077D831F302DA2002F6866 /* facemate-testUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E077D581F302DA2002F6866 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Rory O'Connor";
+				TargetAttributes = {
+					1E077D5F1F302DA2002F6866 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					1E077D771F302DA2002F6866 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1E077D5F1F302DA2002F6866;
+					};
+					1E077D821F302DA2002F6866 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1E077D5F1F302DA2002F6866;
+					};
+				};
+			};
+			buildConfigurationList = 1E077D5B1F302DA2002F6866 /* Build configuration list for PBXProject "facemate-test" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E077D571F302DA2002F6866;
+			productRefGroup = 1E077D611F302DA2002F6866 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E077D5F1F302DA2002F6866 /* facemate-test */,
+				1E077D771F302DA2002F6866 /* facemate-testTests */,
+				1E077D821F302DA2002F6866 /* facemate-testUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E077D5E1F302DA2002F6866 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E077D721F302DA2002F6866 /* LaunchScreen.storyboard in Resources */,
+				1E077D6F1F302DA2002F6866 /* Assets.xcassets in Resources */,
+				1E077D6D1F302DA2002F6866 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E077D761F302DA2002F6866 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E077D811F302DA2002F6866 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		148153F18DD67D29E5A50CCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3B90B4A5E828F774BCEA3372 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-facemate-test/Pods-facemate-test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3ED59B8913631BC1AA7E9960 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4C2C49FE714E4E8C765BEC8B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A43EFE4043CB427A056C4E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-facemate-testUITests/Pods-facemate-testUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6021A9B670B7F62635ED59C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-facemate-test/Pods-facemate-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C1C8235A730861CD3EA26C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-facemate-testUITests/Pods-facemate-testUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D80E6ECA2FC376CDDA28B52 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-facemate-testTests/Pods-facemate-testTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3D3994C8367A4E8EF514D19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-facemate-testTests/Pods-facemate-testTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E077D5C1F302DA2002F6866 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E0D89A91F52A30F00D900C3 /* ViewController.swift in Sources */,
+				1EB376761F52A14F00C7A887 /* CustomCell.swift in Sources */,
+				1E077D641F302DA2002F6866 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E077D741F302DA2002F6866 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E077D7D1F302DA2002F6866 /* facemate_testTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E077D7F1F302DA2002F6866 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E077D881F302DA2002F6866 /* facemate_testUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E077D7A1F302DA2002F6866 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E077D5F1F302DA2002F6866 /* facemate-test */;
+			targetProxy = 1E077D791F302DA2002F6866 /* PBXContainerItemProxy */;
+		};
+		1E077D851F302DA2002F6866 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E077D5F1F302DA2002F6866 /* facemate-test */;
+			targetProxy = 1E077D841F302DA2002F6866 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1E077D6B1F302DA2002F6866 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E077D6C1F302DA2002F6866 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1E077D701F302DA2002F6866 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E077D711F302DA2002F6866 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1E077D8A1F302DA2002F6866 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1E077D8B1F302DA2002F6866 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E077D8D1F302DA2002F6866 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BA3CA4A5BE9B06F61EA08C0 /* Pods-facemate-test.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "facemate-test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsoft.facemate-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1E077D8E1F302DA2002F6866 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2164AD136BFC86B15CB4D66 /* Pods-facemate-test.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "facemate-test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsoft.facemate-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1E077D901F302DA2002F6866 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9697988EA08E552FAB3235B /* Pods-facemate-testTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "facemate-testTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsoft.facemate-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/facemate-test.app/facemate-test";
+			};
+			name = Debug;
+		};
+		1E077D911F302DA2002F6866 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87EB1B4313D2D6E69CC126A6 /* Pods-facemate-testTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "facemate-testTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsoft.facemate-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/facemate-test.app/facemate-test";
+			};
+			name = Release;
+		};
+		1E077D931F302DA2002F6866 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8388BC5360AF5C3E1CCF3321 /* Pods-facemate-testUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "facemate-testUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsoft.facemate-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "facemate-test";
+			};
+			name = Debug;
+		};
+		1E077D941F302DA2002F6866 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18F86F5323EE5776C2AC4EE1 /* Pods-facemate-testUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "facemate-testUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsoft.facemate-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "facemate-test";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E077D5B1F302DA2002F6866 /* Build configuration list for PBXProject "facemate-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E077D8A1F302DA2002F6866 /* Debug */,
+				1E077D8B1F302DA2002F6866 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E077D8C1F302DA2002F6866 /* Build configuration list for PBXNativeTarget "facemate-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E077D8D1F302DA2002F6866 /* Debug */,
+				1E077D8E1F302DA2002F6866 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E077D8F1F302DA2002F6866 /* Build configuration list for PBXNativeTarget "facemate-testTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E077D901F302DA2002F6866 /* Debug */,
+				1E077D911F302DA2002F6866 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E077D921F302DA2002F6866 /* Build configuration list for PBXNativeTarget "facemate-testUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E077D931F302DA2002F6866 /* Debug */,
+				1E077D941F302DA2002F6866 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E077D581F302DA2002F6866 /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_facemate_testUITests {
+  umbrella header "Pods-facemate-testUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
