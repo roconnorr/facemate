@@ -10,4 +10,11 @@ import Foundation
 
 class Product {
     
+    private var name: String
+    private var type: String
+    
+    init(name: String, type: String){
+        self.name = name;
+        self.type = type
+    }
 }

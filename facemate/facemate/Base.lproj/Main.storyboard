@@ -12,7 +12,7 @@
         <!--Products-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="ProductsViewController" customModule="facemate_ui_test_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="ProductsViewController" customModule="facemate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -58,7 +58,7 @@
         <!--Add Product View Controller-->
         <scene sceneID="AUp-ue-INy">
             <objects>
-                <viewController id="Tcs-5v-FEN" customClass="AddProductViewController" customModule="facemate_ui_test_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tcs-5v-FEN" customClass="AddProductViewController" customModule="facemate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8i5-ur-PX3"/>
                         <viewControllerLayoutGuide type="bottom" id="njI-O8-v0p"/>
@@ -85,7 +85,7 @@
         <!--Routine Calendar-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="RoutineCalendarViewController" customModule="facemate_ui_test_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="RoutineCalendarViewController" customModule="facemate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -131,7 +131,7 @@
         <!--Add Routine Item View Controller-->
         <scene sceneID="Top-2k-4Qr">
             <objects>
-                <viewController id="plw-m0-bq4" customClass="AddRoutineItemViewController" customModule="facemate_ui_test_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="plw-m0-bq4" customClass="AddRoutineItemViewController" customModule="facemate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kZc-He-Ald"/>
                         <viewControllerLayoutGuide type="bottom" id="Wwi-lJ-uDD"/>
@@ -166,7 +166,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="jpV-88-zeJ" kind="relationship" relationship="viewControllers" id="zOX-63-LeZ"/>
+                        <segue destination="jpV-88-zeJ" kind="relationship" relationship="viewControllers" id="niQ-LZ-dPa"/>
                         <segue destination="en0-Op-Pr9" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="Lso-Wl-d6x" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                     </connections>
@@ -175,11 +175,11 @@
             </objects>
             <point key="canvasLocation" x="-842" y="-18"/>
         </scene>
-        <!--First-->
+        <!--ProductsNavView-->
         <scene sceneID="mYt-7K-Hkm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lso-Wl-d6x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                <navigationController title="ProductsNavView" automaticallyAdjustsScrollViewInsets="NO" id="Lso-Wl-d6x" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Products" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FRf-1S-OpT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -194,11 +194,11 @@
             </objects>
             <point key="canvasLocation" x="750" y="430"/>
         </scene>
-        <!--Second-->
+        <!--CalendarNavView-->
         <scene sceneID="Kjd-rf-MJb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="en0-Op-Pr9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                <navigationController title="CalendarNavView" automaticallyAdjustsScrollViewInsets="NO" id="en0-Op-Pr9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KEf-sh-d5b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -216,7 +216,7 @@
         <!--Today-->
         <scene sceneID="bJY-T8-HQ3">
             <objects>
-                <viewController id="KM8-K1-dYv" customClass="TodayViewController" customModule="facemate_ui_test_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KM8-K1-dYv" customClass="TodayViewController" customModule="facemate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y4x-Hd-xY3"/>
                         <viewControllerLayoutGuide type="bottom" id="WpL-Sp-uht"/>
@@ -241,11 +241,11 @@
             </objects>
             <point key="canvasLocation" x="1620" y="-1093"/>
         </scene>
-        <!--Item-->
+        <!--TodayNavController-->
         <scene sceneID="Huj-B9-GlY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jpV-88-zeJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cU7-PF-cxi"/>
+                <navigationController title="TodayNavController" automaticallyAdjustsScrollViewInsets="NO" id="jpV-88-zeJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Today" id="cU7-PF-cxi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fNN-uZ-rSj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
