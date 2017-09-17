@@ -17,22 +17,12 @@ class ProductTableViewController: UITableViewController {
         
         //use provided edit button
         navigationItem.leftBarButtonItem = editButtonItem
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        
-        // Load any saved products, otherwise load sample data.
-        if let savedProducts = loadProducts() {
-            products += savedProducts
-        } else {
-            loadSampleProducts()
+        //get a reference to the tab bar controller
+        if let tbc = self.tabBarController as? RootTabViewController {
+            products = tbc.products
+            // do something with tbc.myInformation
         }
-        
-
     }
     
     //MARK: Actions
@@ -135,17 +125,10 @@ class ProductTableViewController: UITableViewController {
         }
     }
     
-
-    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
-    }
-    
-    //MARK: Private Methods
-    private func loadSampleProducts() {
-        products.append(Product(name: "test", type: "test"))
     }
     
     //save products to disk
@@ -157,14 +140,6 @@ class ProductTableViewController: UITableViewController {
             print("Failed to save products...")
         }
     }
-    
-    //loads products from disk
-    private func loadProducts() -> [Product]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Product.ArchiveURL.path) as? [Product]
-    }
-    
-
-    
 
     /*
     // Override to support rearranging the table view.

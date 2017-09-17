@@ -258,10 +258,10 @@
             </objects>
             <point key="canvasLocation" x="3608.8000000000002" y="-269.41529235382313"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Root Tab View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="RootTabViewController" customModule="facemate" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
