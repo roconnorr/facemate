@@ -13,7 +13,7 @@
 		1E3F22D91F6D0D1B0099699E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3F22D71F6D0D1B0099699E /* LaunchScreen.storyboard */; };
 		1E3F22E11F6D122F0099699E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22E01F6D122F0099699E /* TodayViewController.swift */; };
 		1E3F22E31F6D12650099699E /* RoutineCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22E21F6D12650099699E /* RoutineCalendarViewController.swift */; };
-		1E3F22E71F6D12BE0099699E /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22E61F6D12BE0099699E /* AddProductViewController.swift */; };
+		1E3F22E71F6D12BE0099699E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22E61F6D12BE0099699E /* ProductViewController.swift */; };
 		1E3F22E91F6D12D00099699E /* AddRoutineItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22E81F6D12D00099699E /* AddRoutineItemViewController.swift */; };
 		1E3F22ED1F6D13C40099699E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22EC1F6D13C40099699E /* Product.swift */; };
 		1E3F22EF1F6D13CE0099699E /* RoutineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22EE1F6D13CE0099699E /* RoutineItem.swift */; };
@@ -30,7 +30,7 @@
 		1E3F22DA1F6D0D1B0099699E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E3F22E01F6D122F0099699E /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		1E3F22E21F6D12650099699E /* RoutineCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCalendarViewController.swift; sourceTree = "<group>"; };
-		1E3F22E61F6D12BE0099699E /* AddProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		1E3F22E61F6D12BE0099699E /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		1E3F22E81F6D12D00099699E /* AddRoutineItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRoutineItemViewController.swift; sourceTree = "<group>"; };
 		1E3F22EC1F6D13C40099699E /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1E3F22EE1F6D13CE0099699E /* RoutineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineItem.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				1E3F22E81F6D12D00099699E /* AddRoutineItemViewController.swift */,
 				1EB086F31F6E134F0099DCDB /* ProductTableViewController.swift */,
 				1EB086F11F6E11030099DCDB /* ProductTableViewCell.swift */,
-				1E3F22E61F6D12BE0099699E /* AddProductViewController.swift */,
+				1E3F22E61F6D12BE0099699E /* ProductViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 				1EB086F21F6E11030099DCDB /* ProductTableViewCell.swift in Sources */,
 				1E3F22E11F6D122F0099699E /* TodayViewController.swift in Sources */,
 				1EB086F41F6E134F0099DCDB /* ProductTableViewController.swift in Sources */,
-				1E3F22E71F6D12BE0099699E /* AddProductViewController.swift in Sources */,
+				1E3F22E71F6D12BE0099699E /* ProductViewController.swift in Sources */,
 				1E3F22E91F6D12D00099699E /* AddRoutineItemViewController.swift in Sources */,
 				1E3F22CD1F6D0D1B0099699E /* AppDelegate.swift in Sources */,
 				1E3F22ED1F6D13C40099699E /* Product.swift in Sources */,

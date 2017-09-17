@@ -24,14 +24,22 @@ class ProductTableViewController: UITableViewController {
     }
     
     //MARK: Actions
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+    @IBAction func unwindToProductList(sender: UIStoryboardSegue) {
         //downcasts source view controller to productviewcontroller, gets saved product and adds to product array
-        if let sourceViewController = sender.source as? AddProductViewController, let product = sourceViewController.product {
-            let newIndexPath = IndexPath(row: products.count, section: 0)
+        if let sourceViewController = sender.source as? ProductViewController, let product = sourceViewController.product {
             
-            products.append(product)
-            //inserts row with automatic animatipn
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing meal.
+                products[selectedIndexPath.row] = product
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else {
+                // Add a new meal.
+                let newIndexPath = IndexPath(row: products.count, section: 0)
+                
+                products.append(product)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
     }
     
@@ -72,6 +80,38 @@ class ProductTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            case "addItem":
+                print("adding item")
+            
+            case "showDetail":
+                print("asdf")
+                guard let productDetailViewController = segue.destination as?ProductViewController else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+                }
+            
+                guard let selectedProductCell = sender as? ProductTableViewCell else {
+                    fatalError("Unexpected sender: \(String(describing: sender))")
+                }
+            
+                guard let indexPath = tableView.indexPath(for: selectedProductCell) else {
+                    fatalError("The selected cell is not being displayed by the table")
+                }
+            
+                let selectedProduct = products[indexPath.row]
+                productDetailViewController.product = selectedProduct
+            
+            default:
+                fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -105,16 +145,6 @@ class ProductTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     */
 

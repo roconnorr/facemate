@@ -57,6 +57,7 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="bvc-qk-1Xh" id="Nxg-h9-Y8f"/>
                                     <outlet property="typeLabel" destination="QYD-eZ-4Bf" id="eKS-Ek-Wia"/>
+                                    <segue destination="Tcs-5v-FEN" kind="show" identifier="showDetail" id="baM-vJ-0vq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -68,7 +69,7 @@
                     <navigationItem key="navigationItem" id="AXE-De-Xv4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CHz-RH-HQ7">
                             <connections>
-                                <segue destination="Cje-lv-iSU" kind="presentation" id="stk-S5-z9y"/>
+                                <segue destination="Cje-lv-iSU" kind="presentation" identifier="addItem" id="stk-S5-z9y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -80,7 +81,7 @@
         <!--Add Product-->
         <scene sceneID="AUp-ue-INy">
             <objects>
-                <viewController id="Tcs-5v-FEN" customClass="AddProductViewController" customModule="facemate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tcs-5v-FEN" customClass="ProductViewController" customModule="facemate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8i5-ur-PX3"/>
                         <viewControllerLayoutGuide type="bottom" id="njI-O8-v0p"/>
@@ -128,7 +129,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="U4I-RP-OWf">
                             <connections>
-                                <segue destination="QlG-5Z-fQz" kind="unwind" unwindAction="unwindToMealListWithSender:" id="HWz-fX-0pY"/>
+                                <segue destination="QlG-5Z-fQz" kind="unwind" unwindAction="unwindToProductListWithSender:" id="PQi-Gd-7rJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -325,7 +326,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUd-qe-4Jn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2521" y="430"/>
+            <point key="canvasLocation" x="2521" y="865"/>
         </scene>
         <!--ProductsNavView-->
         <scene sceneID="arv-O9-dGa">
@@ -351,4 +352,7 @@
     <resources>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sE0-CF-uz7"/>
+    </inferredMetricsTieBreakers>
 </document>
