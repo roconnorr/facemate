@@ -9,14 +9,13 @@
 import UIKit
 
 class AddProductViewController: UIViewController, UITextFieldDelegate {
-    
-    // TEMP
-    var tempProdArray = [Product]()
 
     // MARK: - Properties
+    var product: Product?
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var typeTextField: UITextField!
-
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +24,9 @@ class AddProductViewController: UIViewController, UITextFieldDelegate {
         
         nameTextField.delegate = self
         typeTextField.delegate = self
+        
+        // Enable the Save button only if the text field has a valid Meal name.
+        updateSaveButtonState()
     }
     
     // MARK: - UITextFieldDelegate
@@ -33,16 +35,37 @@ class AddProductViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    // MARK: - Actions
-    @IBAction func saveButton(_ sender: UIButton) {
-        if nameTextField.text != "" && typeTextField.text != "" {
-            let newProduct = Product(name: nameTextField.text!, type: typeTextField.text!)
-            tempProdArray.append(newProduct)
-            print(tempProdArray[0])
-        } else {
-            //error
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        saveButton.isEnabled = false
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateSaveButtonState()
+        navigationItem.title = textField.text
+    }
+    
+    //MARK: Actions
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: Navigation
+    // This method lets you configure a view controller before it's presented.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            //the save button was not pressed
+            print("save button not pressed")
+            return
         }
         
+        //if the values are nil, returns ""
+        let name = nameTextField.text ?? ""
+        let type = typeTextField.text ?? ""
+        
+        product = Product(name: name, type: type)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,15 +73,9 @@ class AddProductViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
-    */
-
 }
