@@ -23,7 +23,16 @@ class ProductTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        loadSampleProducts()
+        
+        
+        // Load any saved products, otherwise load sample data.
+        if let savedProducts = loadProducts() {
+            products += savedProducts
+        } else {
+            loadSampleProducts()
+        }
+        
+
     }
     
     //MARK: Actions
@@ -43,11 +52,9 @@ class ProductTableViewController: UITableViewController {
                 products.append(product)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            // Save the products.
+            saveProducts()
         }
-    }
-    
-    private func loadSampleProducts() {
-        products.append(Product(name: "test", type: "test"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,6 +127,8 @@ class ProductTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             products.remove(at: indexPath.row)
+            // Save the products.
+            saveProducts()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -133,6 +142,28 @@ class ProductTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+    
+    //MARK: Private Methods
+    private func loadSampleProducts() {
+        products.append(Product(name: "test", type: "test"))
+    }
+    
+    //save products to disk
+    private func saveProducts() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(products, toFile: Product.ArchiveURL.path)
+        if isSuccessfulSave {
+            print("Products successfully saved.")
+        } else {
+            print("Failed to save products...")
+        }
+    }
+    
+    //loads products from disk
+    private func loadProducts() -> [Product]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Product.ArchiveURL.path) as? [Product]
+    }
+    
+
     
 
     /*
