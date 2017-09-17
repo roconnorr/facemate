@@ -14,7 +14,6 @@ class RoutineCalendarViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("meme")
     }
 
     override func didReceiveMemoryWarning() {

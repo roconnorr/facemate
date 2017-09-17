@@ -10,10 +10,12 @@ import Foundation
 
 class RoutineItem {
     
+    var product: Product
     var startDate: Date
     var interval: String
     
-    init(startDate: Date, interval: String) {
+    init(product: Product, startDate: Date, interval: String) {
+        self.product = product
         self.startDate = startDate
         self.interval = interval
     }
