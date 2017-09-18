@@ -46,6 +46,8 @@ class RootTabViewController: UITabBarController {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Product.ArchiveURL.path) as? [Product]
     }
     
+    //use prepare to pass products instead? 
+    
     /*
     // MARK: - Navigation
 
@@ -55,5 +57,4 @@ class RootTabViewController: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

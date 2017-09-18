@@ -19,6 +19,9 @@ class ProductTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem
         
         //get a reference to the tab bar controller
+        
+        //MAYBE JUST GET DATA FROM NSCODING EVERYWHERE
+        //Possib
         if let tbc = self.tabBarController as? RootTabViewController {
             products = tbc.products
             // do something with tbc.myInformation
@@ -27,6 +30,7 @@ class ProductTableViewController: UITableViewController {
     
     //MARK: Actions
     @IBAction func unwindToProductList(sender: UIStoryboardSegue) {
+        print("unwinding")
         //downcasts source view controller to productviewcontroller, gets saved product and adds to product array
         if let sourceViewController = sender.source as? ProductViewController, let product = sourceViewController.product {
             
