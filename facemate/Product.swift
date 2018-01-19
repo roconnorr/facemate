@@ -14,6 +14,9 @@ class Product: NSObject, NSCoding{
     var name: String
     var type: String
     
+    //type interactions?
+    //warnings/attributes?
+    
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("products")

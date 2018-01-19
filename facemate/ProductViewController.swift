@@ -1,5 +1,5 @@
 //
-//  AddProductViewController.swift
+//  ProductViewController.swift
 //  facemate
 //
 //  Created by Rory O'Connor on 16/09/17.
