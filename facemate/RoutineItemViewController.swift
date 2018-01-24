@@ -50,13 +50,10 @@ class RoutineItemViewController: FormViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let tbc = self.navigationController?.parent?.tabBarController as? RootTabViewController {
-            products = tbc.products
-            // do something with tbc.myInformation
-            print("asdf")
-        }
-        
+        print("ASDF")
+        print(Storage.shared.products.count)
+        Storage.shared.products.append(Product(name: "asdf", type: "asdf"))
+        print(Storage.shared.products.count)
         
         //Eureka form configuration
         form

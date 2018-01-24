@@ -9,8 +9,6 @@
 import UIKit
 
 class ProductTableViewController: UITableViewController {
-    
-    var products = [Product]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +18,12 @@ class ProductTableViewController: UITableViewController {
         
         //get a reference to the tab bar controller
         
-        //MAYBE JUST GET DATA FROM NSCODING EVERYWHERE
-        //Possib
-        if let tbc = self.tabBarController as? RootTabViewController {
-            products = tbc.products
-            // do something with tbc.myInformation
-        }
+//        //MAYBE JUST GET DATA FROM NSCODING EVERYWHERE
+//        //bad
+//        if let tbc = self.tabBarController as? RootTabViewController {
+//            products = tbc.products
+//            // do something with tbc.myInformation
+//        }
     }
     
     //MARK: Actions
@@ -36,18 +34,17 @@ class ProductTableViewController: UITableViewController {
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // Update an existing meal.
-                products[selectedIndexPath.row] = product
+                
+                Storage.shared.products[selectedIndexPath.row] = product
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }
             else {
                 // Add a new meal.
-                let newIndexPath = IndexPath(row: products.count, section: 0)
+                let newIndexPath = IndexPath(row: Storage.shared.products.count, section: 0)
                 
-                products.append(product)
+                Storage.shared.products.append(product)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
-            // Save the products.
-            saveProducts()
         }
     }
 
@@ -66,7 +63,7 @@ class ProductTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return the number of rows
-        return products.count
+        return Storage.shared.products.count
     }
 
     
@@ -77,7 +74,7 @@ class ProductTableViewController: UITableViewController {
         }
         
         // Configure the cell...
-        let product = products[indexPath.row]
+        let product = Storage.shared.products[indexPath.row]
         cell.nameLabel.text = product.name
         cell.typeLabel.text = product.type
 
@@ -108,7 +105,7 @@ class ProductTableViewController: UITableViewController {
                     fatalError("The selected cell is not being displayed by the table")
                 }
             
-                let selectedProduct = products[indexPath.row]
+                let selectedProduct = Storage.shared.products[indexPath.row]
                 productDetailViewController.product = selectedProduct
             
             default:
@@ -120,9 +117,8 @@ class ProductTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            products.remove(at: indexPath.row)
-            // Save the products.
-            saveProducts()
+            Storage.shared.products.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -135,15 +131,7 @@ class ProductTableViewController: UITableViewController {
         return true
     }
     
-    //save products to disk
-    private func saveProducts() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(products, toFile: Product.ArchiveURL.path)
-        if isSuccessfulSave {
-            print("Products successfully saved.")
-        } else {
-            print("Failed to save products...")
-        }
-    }
+    
 
     /*
     // Override to support rearranging the table view.
