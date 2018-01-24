@@ -8,16 +8,25 @@
 
 import Foundation
 
+enum RepeatFrequency: String {
+    case never = "Never"
+    case daily = "Daily"
+    case weekly = "Weekly"
+    case monthly = "Monthly"
+    case annually = "Annually"
+}
+
 class RoutineItem {
     
     var product: Product
     var startDate: Date
-    var interval: String
+    //time
+    var repeats: String
     
     init(product: Product, startDate: Date, interval: String) {
         self.product = product
         self.startDate = startDate
-        self.interval = interval
+        self.repeats = interval
     }
     
 }

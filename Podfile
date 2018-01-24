@@ -7,4 +7,7 @@ target 'facemate' do
 
   # Pods for facemate
   pod 'JTAppleCalendar', '~> 7.1'
+  pod 'SwiftDate', '~> 4.5.0'
+  pod 'Eureka', '~>4.0'
+  
 end

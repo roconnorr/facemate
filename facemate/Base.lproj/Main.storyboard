@@ -308,7 +308,7 @@
                     <navigationItem key="navigationItem" title="Routine Calendar" id="tz1-qi-gAg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4li-rA-G3i">
                             <connections>
-                                <segue destination="Kc3-do-K20" kind="presentation" id="FSA-dt-AIR"/>
+                                <segue destination="hgy-Cm-aRs" kind="presentation" id="ama-aQ-hG4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -325,7 +325,6 @@
         <!--Routine Item-->
         <scene sceneID="Top-2k-4Qr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wob-gB-JZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="plw-m0-bq4" customClass="RoutineItemViewController" customModule="facemate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kZc-He-Ald"/>
@@ -335,49 +334,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8T-G4-WbH">
-                                <rect key="frame" x="16" y="222" width="61" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzG-sn-rka">
+                                <rect key="frame" x="16" y="251" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzG-sn-rka">
-                                <rect key="frame" x="16" y="251" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdo-Fl-W8a">
-                                <rect key="frame" x="16" y="280" width="57" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUR-wY-MIT">
-                                <rect key="frame" x="256" y="217" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select Prod"/>
-                                <connections>
-                                    <action selector="selectProductPressed:" destination="plw-m0-bq4" eventType="touchUpInside" id="xBj-rY-sDG"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Routine Item" id="mH4-ep-m3t">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="lCJ-ge-fmF">
                             <connections>
-                                <action selector="cancel:" destination="plw-m0-bq4" id="X9l-jh-xcQ"/>
+                                <action selector="cancelButton:" destination="plw-m0-bq4" id="RkF-FI-gBA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="0Uz-lM-yJ6"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="0Uz-lM-yJ6">
+                            <connections>
+                                <action selector="saveButton:" destination="plw-m0-bq4" id="34d-FI-mBi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wob-gB-JZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4111" y="-165"/>
+            <point key="canvasLocation" x="4448.8000000000002" y="-165.06746626686657"/>
         </scene>
         <!--Root Tab View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -509,22 +491,22 @@
             <point key="canvasLocation" x="750" y="571"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="d1z-ZR-GVA">
+        <scene sceneID="zTM-YZ-dhb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kc3-do-K20" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hgy-Cm-aRs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bGE-34-T6F">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qLJ-OZ-AYD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="plw-m0-bq4" kind="relationship" relationship="rootViewController" id="U9c-OR-8tK"/>
+                        <segue destination="plw-m0-bq4" kind="relationship" relationship="rootViewController" id="hLF-or-7bf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TKs-Mh-eRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HrT-ZX-7XM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2961" y="-165"/>
+            <point key="canvasLocation" x="3175" y="-183"/>
         </scene>
     </scenes>
     <resources>
