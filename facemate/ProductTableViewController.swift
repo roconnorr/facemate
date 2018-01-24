@@ -35,15 +35,25 @@ class ProductTableViewController: UITableViewController {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // Update an existing meal.
                 
-                Storage.shared.products[selectedIndexPath.row] = product
-                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                //need to stop edit from creating a meal that already exists too
+                if Storage.shared.products.contains(product){
+                    //display error instead of doing nothing
+                    print("product already exists")
+                }else{
+                    Storage.shared.products[selectedIndexPath.row] = product
+                    tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                }
             }
             else {
                 // Add a new meal.
-                let newIndexPath = IndexPath(row: Storage.shared.products.count, section: 0)
-                
-                Storage.shared.products.append(product)
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
+                if Storage.shared.products.contains(product){
+                    print("Product already exists")
+                }else{
+                    let newIndexPath = IndexPath(row: Storage.shared.products.count, section: 0)
+                    
+                    Storage.shared.products.append(product)
+                    tableView.insertRows(at: [newIndexPath], with: .automatic)
+                }
             }
         }
     }
@@ -92,7 +102,6 @@ class ProductTableViewController: UITableViewController {
                 print("adding item")
             
             case "showDetail":
-                print("asdf")
                 guard let productDetailViewController = segue.destination as?ProductViewController else {
                     fatalError("Unexpected destination: \(segue.destination)")
                 }

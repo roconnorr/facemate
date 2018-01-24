@@ -23,15 +23,11 @@ class Storage {
         // Load any saved products, otherwise load sample data.
         if let savedProducts = loadProducts() {
             products += savedProducts
-        } else {
-            loadSampleProducts()
         }
     }
     
     //MARK: Private Methods
-    private func loadSampleProducts() {
-        products.append(Product(name: "test", type: "test"))
-    }
+
     
     //loads products from disk
     private func loadProducts() -> [Product]?  {

@@ -11,117 +11,107 @@ import Eureka
 
 class RoutineItemViewController: FormViewController{
     
+    private var product: Product = Product(name: "a", type: "a")
+    private var category: String = "Sunscreen"
+    private var startDate = Date()
+    private var AM: Bool = false
+    private var PM: Bool = false
+    private var repeats: RepeatFrequency = RepeatFrequency.never
+    private var notes: String = ""
+    
     //replace with swiftdate?
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d yyyy, h:mm a"
+        formatter.dateFormat = "MMM d yyyy"
         return formatter
     }()
     
-    var dueDate = Date()
-    
-    fileprivate var repeats_raw: String = "Never"
-    
-    var repeats: RepeatFrequency {
-        get {
-            return RepeatFrequency(rawValue: self.repeats_raw)!
-        }
-        set {
-            self.repeats_raw = newValue.rawValue
-        }
-    }
-    
-    var repeatFrequency: String {
-        get {
-            return repeats.rawValue
-        }
-        set {
-            repeats = RepeatFrequency(rawValue: newValue)!
-        }
-    }
-    
-    
     let repeatOptions: [String] = [RepeatFrequency.never.rawValue,
                                    RepeatFrequency.daily.rawValue,
+                                   RepeatFrequency.alternateDays.rawValue,
                                    RepeatFrequency.weekly.rawValue,
-                                   RepeatFrequency.monthly.rawValue,
-                                   RepeatFrequency.annually.rawValue]
-    
+                                   RepeatFrequency.fortnightly.rawValue,
+                                   RepeatFrequency.monthly.rawValue]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ASDF")
-        print(Storage.shared.products.count)
-        Storage.shared.products.append(Product(name: "asdf", type: "asdf"))
-        print(Storage.shared.products.count)
         
         //Eureka form configuration
         form
             +++ Section()
-            <<< PushRow<String>() { //1
+            <<< PushRow<Product>() { //1
                 $0.title = "Product" //2
-                $0.value = repeatFrequency //3
-                $0.options = repeatOptions //4
+                //$0.value =  //3
+                $0.options = Storage.shared.products //4
                 $0.onChange { [unowned self] row in //5
                     if let value = row.value {
-                        self.repeatFrequency = value
+//                        if let repeatFreqValue = RepeatFrequency(rawValue: value){
+//                            self.repeats = repeatFreqValue
+//                        }
                     }
                 }
                 
             }
-            +++ Section()    //2
-            <<< TextRow() { // 3
-                $0.title = "Description" //4
-                $0.placeholder = "e.g. Pick up my laundry"
-                $0.value = "asdf" //5
-                $0.onChange { [unowned self] row in //6
-                    //self.viewModel.title = row.value
-                    //executed when value changes
-                }
-                $0.add(rule: RuleRequired()) //1
-                $0.validationOptions = .validatesOnChange //2
-                $0.cellUpdate { (cell, row) in //3
-                    if !row.isValid {
-                        cell.titleLabel?.textColor = .red
+            
+            +++ Section()
+            <<< DateRow() {
+                $0.dateFormatter = type(of: self).dateFormatter //1
+                $0.title = "Start Date" //2
+                $0.value = startDate //3
+                $0.minimumDate = Date() //4
+                $0.onChange { [unowned self] row in //5
+                    if let date = row.value {
+                        self.startDate = date
                     }
                 }
             }
             
-            +++ Section()
-            <<< DateTimeRow() {
-                $0.dateFormatter = type(of: self).dateFormatter //1
-                $0.title = "Due date" //2
-                $0.value = dueDate //3
-                $0.minimumDate = Date() //4
-                $0.onChange { [unowned self] row in //5
-                    if let date = row.value {
-                        self.dueDate = date
+            <<< SegmentedRow<String>() {
+                $0.title = "AM/PM"
+                $0.value = "AM"
+                $0.options = ["AM", "PM", "AM/PM"]
+                $0.onChange { [unowned self] row in
+                    if let value = row.value {
+                        switch value {
+                            case "AM":
+                                self.AM = true
+                                self.PM = false
+                            case "PM":
+                                self.AM = false
+                                self.PM = true
+                            case "AM/PM":
+                                self.AM = true
+                                self.PM = true
+                            default:
+                                print("unexpected AM/PM value")
+                        }
                     }
                 }
             }
+            
             <<< PushRow<String>() { //1
                 $0.title = "Repeats" //2
-                $0.value = repeatFrequency //3
+                $0.value = repeats.rawValue //3
                 $0.options = repeatOptions //4
                 $0.onChange { [unowned self] row in //5
                     if let value = row.value {
-                        self.repeatFrequency = value
+                        if let repeatFreqValue = RepeatFrequency(rawValue: value){
+                            self.repeats = repeatFreqValue
+                        }
                     }
                 }
-                
             }
-            <<< AlertRow<String>() {
-                $0.title = "Reminder"
-                $0.selectorTitle = "Remind me"
-                //$0.value = viewModel.reminder
-                //$0.options = viewModel.reminderOptions
-//                $0.onChange { [unowned self] row in
-//                    if let value = row.value {
-//                        //self.viewModel.reminder = value
-//                    }
-//                }
+        
+            +++ Section("Notes")
+            <<< TextAreaRow() {
+                $0.placeholder = "e.g. Apply safely"
+                $0.onChange { [unowned self] row in
+                    //executed when value changes
+                    if let value = row.value{
+                        self.notes = value
+                    }
+                }
             }
-
     }
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
@@ -149,15 +139,4 @@ class RoutineItemViewController: FormViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

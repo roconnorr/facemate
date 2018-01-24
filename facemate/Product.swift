@@ -14,6 +14,10 @@ class Product: NSObject, NSCoding{
     var name: String
     var type: String
     
+    override var description: String {
+        return "Name: \(name), Type: \(type)"
+    }
+    
     //type interactions?
     //warnings/attributes?
     
@@ -50,6 +54,14 @@ class Product: NSObject, NSCoding{
         // Must call designated initializer.
         self.init(name: name, type: type)
         
+    }
+    
+    //evaluate product equality
+    override func isEqual(_ object: Any?) -> Bool {
+        if let object = object as? Product {
+            return self.name == object.name && self.type == object.type
+        }
+        return false
     }
     
     //MARK: NSCoding
