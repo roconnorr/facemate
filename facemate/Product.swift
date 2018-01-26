@@ -88,22 +88,16 @@ class Product: NSObject, NSCoding{
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         
         guard let startDate = aDecoder.decodeObject(forKey: PropertyKey.startDate) as? Date else {
-            print("Unable to decode the notes for a Product object.")
+            print("Unable to decode the startDate for a Product object.")
             return nil
         }
         
-        guard let AM = aDecoder.decodeObject(forKey: PropertyKey.AM) as? Bool else {
-            print("Unable to decode the notes for a Product object.")
-            return nil
-        }
+        let AM = Bool(aDecoder.decodeBool(forKey: PropertyKey.AM))
         
-        guard let PM = aDecoder.decodeObject(forKey: PropertyKey.PM) as? Bool else {
-            print("Unable to decode the notes for a Product object.")
-            return nil
-        }
+        let PM = Bool(aDecoder.decodeBool(forKey: PropertyKey.PM))
         
         guard let repeats = aDecoder.decodeObject(forKey: PropertyKey.repeats) as? String else {
-            print("Unable to decode the notes for a Product object.")
+            print("Unable to decode the repeats for a Product object.")
             return nil
         }
         
