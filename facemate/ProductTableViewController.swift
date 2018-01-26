@@ -16,10 +16,8 @@ class ProductTableViewController: UITableViewController {
         //use provided edit button
         navigationItem.leftBarButtonItem = editButtonItem
         
-        //get a reference to the tab bar controller
+        //how to get a reference to the tab bar controller
         
-//        //MAYBE JUST GET DATA FROM NSCODING EVERYWHERE
-//        //bad
 //        if let tbc = self.tabBarController as? RootTabViewController {
 //            products = tbc.products
 //            // do something with tbc.myInformation
@@ -33,9 +31,9 @@ class ProductTableViewController: UITableViewController {
         if let sourceViewController = sender.source as? ProductViewController, let product = sourceViewController.product {
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                // Update an existing meal.
+                // Update an existing product.
                 
-                //need to stop edit from creating a meal that already exists too
+                //need to stop edit from creating a product that already exists too
                 if Storage.shared.products.contains(product){
                     //display error instead of doing nothing
                     print("product already exists")
@@ -45,7 +43,7 @@ class ProductTableViewController: UITableViewController {
                 }
             }
             else {
-                // Add a new meal.
+                // Add a new product.
                 if Storage.shared.products.contains(product){
                     print("Product already exists")
                 }else{
@@ -85,7 +83,7 @@ class ProductTableViewController: UITableViewController {
         
         // Configure the cell...
         let product = Storage.shared.products[indexPath.row]
-//        cell.nameLabel.text = product.name
+        cell.nameLabel.text = product.name
 //        cell.typeLabel.text = product.type
 
         return cell

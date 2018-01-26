@@ -37,7 +37,7 @@ class Storage {
     }
     
     //save products to disk
-    public func saveProducts() {
+    private func saveProducts() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(products, toFile: Product.ArchiveURL.path)
         if isSuccessfulSave {
             print("Products successfully saved.")

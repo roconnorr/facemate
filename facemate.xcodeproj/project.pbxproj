@@ -127,8 +127,8 @@
 		1E690A111F6E7A3100D712D3 /* Routine */ = {
 			isa = PBXGroup;
 			children = (
-				1E3F22E21F6D12650099699E /* RoutineCalendarViewController.swift */,
 				1E3F22E81F6D12D00099699E /* RoutineItemViewController.swift */,
+				1E3F22E21F6D12650099699E /* RoutineCalendarViewController.swift */,
 			);
 			name = Routine;
 			sourceTree = "<group>";

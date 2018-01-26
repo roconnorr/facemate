@@ -16,6 +16,8 @@ enum Category: String {
 
 class Product: NSObject, NSCoding{
     
+    //make private backing array for categories - make categories enum type and convert with getters/setters
+    
     //MARK: Properties
     var name: String
     //stored as rawvalue of category enum to work with nscoding
