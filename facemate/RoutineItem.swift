@@ -7,16 +7,15 @@
 //
 
 import Foundation
-import SwiftDate
 
-enum RepeatFrequency: String {
-    case never = "Never"
-    case daily = "Daily"
-    case alternateDays = "AlternateDays"
-    case weekly = "Weekly"
-    case fortnightly = "Fortnightly"
-    case monthly = "Monthly"
-}
+//enum RepeatFrequency: String {
+//    case never = "Never"
+//    case daily = "Daily"
+//    case alternateDays = "AlternateDays"
+//    case weekly = "Weekly"
+//    case fortnightly = "Fortnightly"
+//    case monthly = "Monthly"
+//}
 
 class RoutineItem {
     var product: Product

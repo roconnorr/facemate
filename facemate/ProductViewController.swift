@@ -10,9 +10,6 @@ import UIKit
 import Eureka
 
 class ProductViewController: FormViewController {
-
-    // MARK: - Properties
-    var product: Product?
     
     //product
     var name: String = ""
