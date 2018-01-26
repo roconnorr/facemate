@@ -101,11 +101,16 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Bm1-a7-MAQ">
                             <connections>
                                 <action selector="saveButton:" destination="Tcs-5v-FEN" id="hUL-C8-lZq"/>
+                                <segue destination="QlG-5Z-fQz" kind="unwind" unwindAction="unwindToProductListWithSender:" id="ZBi-A8-1Bj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="Bm1-a7-MAQ" id="oeF-Po-IwY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIT-7t-7I9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QlG-5Z-fQz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3610" y="571"/>
         </scene>

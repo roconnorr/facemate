@@ -21,10 +21,11 @@ class Storage {
     
     private init(){
         // Load any saved products, otherwise load sample data.
+//        products.append(Product(name: "asdf", categories: ["asdf"], rating: 1, startDate: Date(), AM: true, PM: true, repeats: "asdf", notes: "Asdf"))
         if let savedProducts = loadProducts() {
             products += savedProducts
         }else{
-            
+
         }
     }
     
