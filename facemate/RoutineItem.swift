@@ -9,12 +9,6 @@
 import Foundation
 import SwiftDate
 
-enum Categories: String {
-    case sunscreen = "Sunscreen"
-    case daycream = "Daycream"
-    case nightcream = "Nightcream"
-}
-
 enum RepeatFrequency: String {
     case never = "Never"
     case daily = "Daily"
@@ -25,23 +19,18 @@ enum RepeatFrequency: String {
 }
 
 class RoutineItem {
-    
     var product: Product
-    var category: String
     var startDate: Date
     var AM: Bool
     var PM: Bool
     var repeats: RepeatFrequency
-    var notes: String
     
-    init(product: Product, category: String, startDate: Date, AM: Bool, PM: Bool, repeats: RepeatFrequency, notes: String) {
+    
+    init(product: Product, startDate: Date, AM: Bool, PM: Bool, repeats: RepeatFrequency) {
         self.product = product
-        self.category = category
         self.startDate = startDate
         self.AM = AM
         self.PM = PM
         self.repeats = repeats
-        self.notes = notes
     }
-    
 }

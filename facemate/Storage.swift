@@ -23,6 +23,8 @@ class Storage {
         // Load any saved products, otherwise load sample data.
         if let savedProducts = loadProducts() {
             products += savedProducts
+        }else{
+            
         }
     }
     
@@ -35,7 +37,7 @@ class Storage {
     }
     
     //save products to disk
-    private func saveProducts() {
+    public func saveProducts() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(products, toFile: Product.ArchiveURL.path)
         if isSuccessfulSave {
             print("Products successfully saved.")

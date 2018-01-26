@@ -26,8 +26,8 @@ class ProductViewController: UIViewController, UITextFieldDelegate {
         typeTextField.delegate = self
         
         if let product = product {
-            nameTextField.text = product.name
-            typeTextField.text = product.type
+//            nameTextField.text = product.name
+//            typeTextField.text = product.type
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
@@ -78,7 +78,7 @@ class ProductViewController: UIViewController, UITextFieldDelegate {
         let name = nameTextField.text ?? ""
         let type = typeTextField.text ?? ""
         
-        product = Product(name: name, type: type)
+        //product = Product(name: name, type: type)
     }
 
     override func didReceiveMemoryWarning() {

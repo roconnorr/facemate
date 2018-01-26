@@ -85,8 +85,8 @@ class ProductTableViewController: UITableViewController {
         
         // Configure the cell...
         let product = Storage.shared.products[indexPath.row]
-        cell.nameLabel.text = product.name
-        cell.typeLabel.text = product.type
+//        cell.nameLabel.text = product.name
+//        cell.typeLabel.text = product.type
 
         return cell
     }

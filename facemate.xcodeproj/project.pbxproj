@@ -83,6 +83,7 @@
 			children = (
 				1E3F22CC1F6D0D1B0099699E /* AppDelegate.swift */,
 				1EA6FF072011BE39007604D4 /* CustomCell.swift */,
+				1EE759CF20181203004C37F1 /* Storage.swift */,
 				1E3F22EB1F6D13A30099699E /* Models */,
 				1E3F22EA1F6D13900099699E /* ViewControllers */,
 				1E3F22D21F6D0D1B0099699E /* Main.storyboard */,
@@ -109,7 +110,6 @@
 			children = (
 				1E3F22EC1F6D13C40099699E /* Product.swift */,
 				1E3F22EE1F6D13CE0099699E /* RoutineItem.swift */,
-				1EE759CF20181203004C37F1 /* Storage.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";

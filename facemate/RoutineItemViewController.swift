@@ -11,13 +11,14 @@ import Eureka
 
 class RoutineItemViewController: FormViewController{
     
-    private var product: Product = Product(name: "a", type: "a")
-    private var category: String = "Sunscreen"
+    //set default selected product to first in the product list
+    //TODO: check if first product exists or set 0
+//  private var product: Product = Storage.shared.products[0]
+    private var product: Product = Product(name: "Test", categories: [Category.daycream.rawValue], rating: 1, notes: "test")
     private var startDate = Date()
-    private var AM: Bool = false
+    private var AM: Bool = true
     private var PM: Bool = false
     private var repeats: RepeatFrequency = RepeatFrequency.never
-    private var notes: String = ""
     
     //replace with swiftdate?
     static let dateFormatter: DateFormatter = {
@@ -36,36 +37,41 @@ class RoutineItemViewController: FormViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Storage.shared.products.append(Product(name: "test", categories: [Category.daycream.rawValue], rating: 1, notes: "asdf"))
+        print(Storage.shared.products[0])
+        Storage.shared.saveProducts()
+        
         //Eureka form configuration
         form
+            //Product selection
             +++ Section()
-            <<< PushRow<Product>() { //1
-                $0.title = "Product" //2
-                //$0.value =  //3
-                $0.options = Storage.shared.products //4
-                $0.onChange { [unowned self] row in //5
+            <<< PushRow<Product>() {
+                $0.title = "Product"
+                $0.value =  product
+                $0.options = Storage.shared.products
+                $0.onChange { [unowned self] row in
                     if let value = row.value {
-//                        if let repeatFreqValue = RepeatFrequency(rawValue: value){
-//                            self.repeats = repeatFreqValue
-//                        }
+                        self.product = value
                     }
                 }
                 
             }
             
+            //Start date selection
             +++ Section()
             <<< DateRow() {
-                $0.dateFormatter = type(of: self).dateFormatter //1
-                $0.title = "Start Date" //2
-                $0.value = startDate //3
-                $0.minimumDate = Date() //4
-                $0.onChange { [unowned self] row in //5
+                $0.dateFormatter = type(of: self).dateFormatter
+                $0.title = "Start Date"
+                $0.value = startDate
+                $0.minimumDate = Date()
+                $0.onChange { [unowned self] row in
                     if let date = row.value {
                         self.startDate = date
                     }
                 }
             }
             
+            //AM/PM selection
             <<< SegmentedRow<String>() {
                 $0.title = "AM/PM"
                 $0.value = "AM"
@@ -89,11 +95,12 @@ class RoutineItemViewController: FormViewController{
                 }
             }
             
-            <<< PushRow<String>() { //1
-                $0.title = "Repeats" //2
-                $0.value = repeats.rawValue //3
-                $0.options = repeatOptions //4
-                $0.onChange { [unowned self] row in //5
+            //Repeats selection
+            <<< PushRow<String>() {
+                $0.title = "Repeats"
+                $0.value = repeats.rawValue
+                $0.options = repeatOptions
+                $0.onChange { [unowned self] row in
                     if let value = row.value {
                         if let repeatFreqValue = RepeatFrequency(rawValue: value){
                             self.repeats = repeatFreqValue
@@ -101,21 +108,11 @@ class RoutineItemViewController: FormViewController{
                     }
                 }
             }
-        
-            +++ Section("Notes")
-            <<< TextAreaRow() {
-                $0.placeholder = "e.g. Apply safely"
-                $0.onChange { [unowned self] row in
-                    //executed when value changes
-                    if let value = row.value{
-                        self.notes = value
-                    }
-                }
-            }
     }
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
         if form.validate().isEmpty {
+            //save code here
             popViewController()
         }
     }
