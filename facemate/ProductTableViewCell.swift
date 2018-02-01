@@ -12,7 +12,15 @@ class ProductTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    
+    @IBOutlet weak var repeatsLabel: UILabel!
+    
+    @IBOutlet weak var AMPMLabel: UILabel!
+    
+    @IBOutlet weak var startDateLabel: UILabel!
+    
+    @IBOutlet weak var categoriesLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

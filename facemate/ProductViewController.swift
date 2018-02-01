@@ -16,16 +16,15 @@ class ProductViewController: FormViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     //product values
-    var name: String = ""
+    private var name: String = ""
     //stored as rawvalue of category enum to work with nscoding
-    var categories: [String] = ["Daycream"]
-    var rating: Int = 3
+    private var categories: [String] = ["Daycream"]
+    private var rating: Int = 3
     private var startDate = Date()
     private var AM: Bool = true
     private var PM: Bool = false
     private var repeats: String = "Never"
-    var notes: String = ""
-    
+    private var notes: String = ""
     private var AMPMStringValue = "AM"
     
     //replace with swiftdate?
@@ -58,15 +57,7 @@ class ProductViewController: FormViewController {
             self.PM = product.PM
             self.repeats = product.repeats
             self.notes = product.notes
-            
-            //set AM/PM string value for form
-            if AM == true && PM == false {
-                AMPMStringValue = "AM"
-            }else if AM == false && PM == true {
-                AMPMStringValue = "PM"
-            }else{
-                AMPMStringValue = "AM/PM"
-            }
+            self.AMPMStringValue = product.AMPMStringValue
         }
         
         //eureka form configuration

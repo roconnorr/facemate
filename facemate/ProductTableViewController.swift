@@ -84,7 +84,11 @@ class ProductTableViewController: UITableViewController {
         // Configure the cell...
         let product = Storage.shared.products[indexPath.row]
         cell.nameLabel.text = product.name
-//        cell.typeLabel.text = product.type
+        cell.ratingLabel.text = String(product.rating)
+        cell.repeatsLabel.text = product.repeats
+        cell.AMPMLabel.text = product.AMPMStringValue
+        cell.startDateLabel.text = product.startDate.description
+        cell.categoriesLabel.text = product.categories.description
 
         return cell
     }

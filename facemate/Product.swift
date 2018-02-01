@@ -37,6 +37,7 @@ class Product: NSObject, NSCoding{
     var PM: Bool
     var repeats: String
     var notes: String
+    var AMPMStringValue: String
     
 //    fileprivate var categories_raw: [String]
 //    fileprivate var repeats_raw: String
@@ -70,6 +71,14 @@ class Product: NSObject, NSCoding{
         self.PM = PM
         self.repeats = repeats
         self.notes = notes
+        
+        if AM == true && PM == false {
+            self.AMPMStringValue = "AM"
+        }else if AM == false && PM == true {
+            self.AMPMStringValue = "PM"
+        }else{
+            self.AMPMStringValue = "AM/PM"
+        }
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
