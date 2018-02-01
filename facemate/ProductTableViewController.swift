@@ -36,7 +36,7 @@ class ProductTableViewController: UITableViewController {
                 //need to stop edit from creating a product that already exists too
                 if Storage.shared.products.contains(product){
                     //display error instead of doing nothing
-                    print("product already exists")
+                    print("product already exists 1\(selectedIndexPath)")
                 }else{
                     Storage.shared.products[selectedIndexPath.row] = product
                     tableView.reloadRows(at: [selectedIndexPath], with: .none)
@@ -45,7 +45,7 @@ class ProductTableViewController: UITableViewController {
             else {
                 // Add a new product.
                 if Storage.shared.products.contains(product){
-                    print("Product already exists")
+                    print("Product already exists 2")
                 }else{
                     let newIndexPath = IndexPath(row: Storage.shared.products.count, section: 0)
                     

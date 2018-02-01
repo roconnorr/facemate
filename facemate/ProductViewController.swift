@@ -233,6 +233,7 @@ class ProductViewController: FormViewController {
         
         //create the product for the table view controller to recieve
         product = Product(name: name, categories: categories, rating: rating, startDate: startDate, AM: AM, PM: PM, repeats: repeats, notes: notes)
+        print(product)
     }
     
     private func updateSaveButtonState() {

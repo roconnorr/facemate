@@ -42,7 +42,7 @@ class Product: NSObject, NSCoding{
 //    fileprivate var repeats_raw: String
     
     override var description: String {
-        return "Name: \(name), Categories: \(categories), Rating: \(rating), Notes\(notes)"
+        return "Name: \(name), Categories: \(categories), Rating: \(rating), StartDate: \(startDate), AM: \(AM), PM: \(PM), Repeats: \(repeats), Notes: \(notes)"
     }
     
     //MARK: Archiving Paths
@@ -108,14 +108,12 @@ class Product: NSObject, NSCoding{
         
         // Must call designated initializer.
         self.init(name: name, categories: categories, rating: rating, startDate: startDate, AM: AM, PM: PM, repeats: repeats, notes: notes)
-        
     }
     
-    //FIX ME
     //evaluate product equality
     override func isEqual(_ object: Any?) -> Bool {
         if let object = object as? Product {
-            return self.name == object.name && self.categories == object.categories && self.rating == object.rating && self.notes == object.notes
+            return self.name == object.name && self.categories == object.categories && self.rating == object.rating && self.startDate == object.startDate && self.AM == object.AM && self.PM == object.PM && self.repeats == object.repeats && self.notes == object.notes
         }
         return false
     }
