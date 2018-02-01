@@ -15,7 +15,7 @@ class ProductViewController: FormViewController {
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    //product
+    //product values
     var name: String = ""
     //stored as rawvalue of category enum to work with nscoding
     var categories: [String] = ["Daycream"]
@@ -25,6 +25,8 @@ class ProductViewController: FormViewController {
     private var PM: Bool = false
     private var repeats: String = "Never"
     var notes: String = ""
+    
+    private var AMPMStringValue = "AM"
     
     //replace with swiftdate?
     static let dateFormatter: DateFormatter = {
@@ -56,6 +58,15 @@ class ProductViewController: FormViewController {
             self.PM = product.PM
             self.repeats = product.repeats
             self.notes = product.notes
+            
+            //set AM/PM string value for form
+            if AM == true && PM == false {
+                AMPMStringValue = "AM"
+            }else if AM == false && PM == true {
+                AMPMStringValue = "PM"
+            }else{
+                AMPMStringValue = "AM/PM"
+            }
         }
         
         //eureka form configuration
@@ -147,7 +158,7 @@ class ProductViewController: FormViewController {
             <<< SegmentedRow<String>() {
                 $0.title = "AM/PM"
                 //fix me
-                $0.value = "AM"
+                $0.value = AMPMStringValue
                 $0.options = ["AM", "PM", "AM/PM"]
                 $0.onChange { [unowned self] row in
                     if let value = row.value {
@@ -220,6 +231,7 @@ class ProductViewController: FormViewController {
             return
         }
         
+        //create the product for the table view controller to recieve
         product = Product(name: name, categories: categories, rating: rating, startDate: startDate, AM: AM, PM: PM, repeats: repeats, notes: notes)
     }
     

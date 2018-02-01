@@ -26,7 +26,7 @@ class ProductTableViewController: UITableViewController {
     
     //MARK: Actions
     @IBAction func unwindToProductList(sender: UIStoryboardSegue) {
-        print("unwinding")
+        //print("unwinding")
         //downcasts source view controller to productviewcontroller, gets saved product and adds to product array
         if let sourceViewController = sender.source as? ProductViewController, let product = sourceViewController.product {
             

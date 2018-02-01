@@ -16,10 +16,10 @@ class RoutineItemViewController: FormViewController{
     }
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
-        if form.validate().isEmpty {
+        //if form.validate().isEmpty {
             //save code here
             popViewController()
-        }
+        //}
     }
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
