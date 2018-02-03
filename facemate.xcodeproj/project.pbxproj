@@ -14,9 +14,9 @@
 		1E3F22E11F6D122F0099699E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22E01F6D122F0099699E /* TodayViewController.swift */; };
 		1E3F22E31F6D12650099699E /* RoutineCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22E21F6D12650099699E /* RoutineCalendarViewController.swift */; };
 		1E3F22E71F6D12BE0099699E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22E61F6D12BE0099699E /* ProductViewController.swift */; };
-		1E3F22E91F6D12D00099699E /* RoutineItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22E81F6D12D00099699E /* RoutineItemViewController.swift */; };
 		1E3F22ED1F6D13C40099699E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F22EC1F6D13C40099699E /* Product.swift */; };
 		1E690A131F6E983500D712D3 /* RootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E690A121F6E983500D712D3 /* RootTabViewController.swift */; };
+		1E88B912202538A400B571D1 /* TodayAMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88B911202538A400B571D1 /* TodayAMTableViewController.swift */; };
 		1EA6FF082011BE39007604D4 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA6FF072011BE39007604D4 /* CustomCell.swift */; };
 		1EB086F21F6E11030099DCDB /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB086F11F6E11030099DCDB /* ProductTableViewCell.swift */; };
 		1EB086F41F6E134F0099DCDB /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB086F31F6E134F0099DCDB /* ProductTableViewController.swift */; };
@@ -34,9 +34,9 @@
 		1E3F22E01F6D122F0099699E /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		1E3F22E21F6D12650099699E /* RoutineCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineCalendarViewController.swift; sourceTree = "<group>"; };
 		1E3F22E61F6D12BE0099699E /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
-		1E3F22E81F6D12D00099699E /* RoutineItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineItemViewController.swift; sourceTree = "<group>"; };
 		1E3F22EC1F6D13C40099699E /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1E690A121F6E983500D712D3 /* RootTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabViewController.swift; sourceTree = "<group>"; };
+		1E88B911202538A400B571D1 /* TodayAMTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAMTableViewController.swift; sourceTree = "<group>"; };
 		1EA6FF072011BE39007604D4 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		1EB086F11F6E11030099DCDB /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		1EB086F31F6E134F0099DCDB /* ProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 				1E3F22CC1F6D0D1B0099699E /* AppDelegate.swift */,
 				1EA6FF072011BE39007604D4 /* CustomCell.swift */,
 				1EE759CF20181203004C37F1 /* Storage.swift */,
-				1E3F22EB1F6D13A30099699E /* Models */,
-				1E3F22EA1F6D13900099699E /* ViewControllers */,
+				1E88B91720253CB200B571D1 /* Models */,
+				1E88B91620253C9600B571D1 /* ViewControllers */,
 				1E3F22D21F6D0D1B0099699E /* Main.storyboard */,
 				1E3F22D51F6D0D1B0099699E /* Assets.xcassets */,
 				1E3F22D71F6D0D1B0099699E /* LaunchScreen.storyboard */,
@@ -92,42 +92,50 @@
 			path = facemate;
 			sourceTree = "<group>";
 		};
-		1E3F22EA1F6D13900099699E /* ViewControllers */ = {
+		1E88B91520253C8700B571D1 /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				1E690A121F6E983500D712D3 /* RootTabViewController.swift */,
 				1E3F22E01F6D122F0099699E /* TodayViewController.swift */,
-				1E690A101F6E7A2400D712D3 /* Product */,
-				1E690A111F6E7A3100D712D3 /* Routine */,
+				1E88B911202538A400B571D1 /* TodayAMTableViewController.swift */,
 			);
-			name = ViewControllers;
+			path = Today;
 			sourceTree = "<group>";
 		};
-		1E3F22EB1F6D13A30099699E /* Models */ = {
+		1E88B91620253C9600B571D1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1E88B91520253C8700B571D1 /* Today */,
+				1E690A121F6E983500D712D3 /* RootTabViewController.swift */,
+				1E88B91920253D1400B571D1 /* Routine */,
+				1E88B91820253CF500B571D1 /* Product */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1E88B91720253CB200B571D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				1E3F22EC1F6D13C40099699E /* Product.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		1E690A101F6E7A2400D712D3 /* Product */ = {
+		1E88B91820253CF500B571D1 /* Product */ = {
 			isa = PBXGroup;
 			children = (
 				1EB086F31F6E134F0099DCDB /* ProductTableViewController.swift */,
 				1EB086F11F6E11030099DCDB /* ProductTableViewCell.swift */,
 				1E3F22E61F6D12BE0099699E /* ProductViewController.swift */,
 			);
-			name = Product;
+			path = Product;
 			sourceTree = "<group>";
 		};
-		1E690A111F6E7A3100D712D3 /* Routine */ = {
+		1E88B91920253D1400B571D1 /* Routine */ = {
 			isa = PBXGroup;
 			children = (
-				1E3F22E81F6D12D00099699E /* RoutineItemViewController.swift */,
 				1E3F22E21F6D12650099699E /* RoutineCalendarViewController.swift */,
 			);
-			name = Routine;
+			path = Routine;
 			sourceTree = "<group>";
 		};
 		5B720B87FD7085CCD08860FC /* Frameworks */ = {
@@ -288,7 +296,7 @@
 				1E690A131F6E983500D712D3 /* RootTabViewController.swift in Sources */,
 				1EB086F41F6E134F0099DCDB /* ProductTableViewController.swift in Sources */,
 				1E3F22E71F6D12BE0099699E /* ProductViewController.swift in Sources */,
-				1E3F22E91F6D12D00099699E /* RoutineItemViewController.swift in Sources */,
+				1E88B912202538A400B571D1 /* TodayAMTableViewController.swift in Sources */,
 				1E3F22CD1F6D0D1B0099699E /* AppDelegate.swift in Sources */,
 				1EA6FF082011BE39007604D4 /* CustomCell.swift in Sources */,
 				1E3F22ED1F6D13C40099699E /* Product.swift in Sources */,
