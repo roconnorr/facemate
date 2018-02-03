@@ -18,7 +18,8 @@ class EventDatabase {
     
     let events = Table("events")
     
-    let id = Expression<Int64>("product_id")
+    let eventID = Expression<Int64>("event_id")
+    let productID = Expression<Int64>("product_id")
     let date = Expression<Date>("date")
     
     
@@ -30,13 +31,15 @@ class EventDatabase {
         do{
             self.db = try Connection("\(path)/db.sqlite3")
             
+            //try db?.run(events.drop())
             //if the events table does not exist, create it
             try db?.run(events.create(ifNotExists: true){ t in
-                t.column(id, primaryKey: true)
+                t.column(eventID, primaryKey: .autoincrement)
+                t.column(productID)
                 t.column(date)
             })
         } catch {
-            print("Could not get DB connection")
+            print("Could not get DB connection: \(error)")
         }
     }
     
@@ -45,7 +48,7 @@ class EventDatabase {
         
         do {
             for event in try db!.prepare(events){
-                let new_id = event[id]
+                let new_id = event[productID]
                 let new_date = event[date]
                 eventArray.append((new_id, new_date))
             }
@@ -59,7 +62,7 @@ class EventDatabase {
     
     func addEvent(product: Product) {
         do {
-            try db?.run(events.insert(id <- 1, date <- product.startDate))
+            try db?.run(events.insert(productID <- 1, date <- product.startDate))
         } catch {
             print("Could not add event to DB: \(error)")
         }
