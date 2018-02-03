@@ -41,7 +41,7 @@ class RoutineCalendarViewController: UIViewController {
     }
     
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState){
-        guard let validCell = view as? CustomCell else { return }
+        guard let validCell = view as? RoutineCalendarCell else { return }
         
         if cellState.isSelected {
             validCell.dateLabel.textColor = selectedMonthColor
@@ -55,7 +55,7 @@ class RoutineCalendarViewController: UIViewController {
     }
     
     func handleCellSelectedColor(view: JTAppleCell?, cellState: CellState){
-        guard let validCell = view as? CustomCell else { return }
+        guard let validCell = view as? RoutineCalendarCell else { return }
         
         if cellState.isSelected {
             validCell.selectedView.isHidden = false
@@ -98,19 +98,19 @@ extension RoutineCalendarViewController: JTAppleCalendarViewDataSource {
 extension RoutineCalendarViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         // This function should have the same code as the cellForItemAt function
-        let cell = cell as! CustomCell
+        let cell = cell as! RoutineCalendarCell
         sharedFunctionToConfigureCell(cell: cell, cellState: cellState, date: date)
     }
     
     
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
-        let cell = calendar.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let cell = calendar.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! RoutineCalendarCell
         sharedFunctionToConfigureCell(cell: cell, cellState: cellState, date: date)
 
         return cell
     }
     
-    func sharedFunctionToConfigureCell(cell: CustomCell, cellState: CellState, date: Date) {
+    func sharedFunctionToConfigureCell(cell: RoutineCalendarCell, cellState: CellState, date: Date) {
         
         cell.dateLabel.text = cellState.text
         
