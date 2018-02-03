@@ -11,5 +11,6 @@ target 'facemate' do
   pod 'Eureka', '~> 4.0'
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'SQLite.swift', '~> 0.11.4'
   
 end

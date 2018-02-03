@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        EventDatabase.sharedInstance.addEvent(product: Product(name: "Asdf", categories: ["asdf"], rating: 1, startDate: Date(), AM: true, PM: true, repeats: "Weekly", notes: "asdf"))
+        
+        print(EventDatabase.sharedInstance.getEvents())
+        
+        
         // Override point for customization after application launch.
         return true
     }
