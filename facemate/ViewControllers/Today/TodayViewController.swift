@@ -7,13 +7,36 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class TodayViewController: UIViewController {
+    
+    @IBOutlet weak var uvLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        Alamofire.request("https://httpbin.org/get").responseJSON { response in
+            
+            guard let data = response.data else {
+                // No data returned
+                return
+            }
+            
+            do {
+                let json = try JSON(data: data)
+                print(json)
+            } catch {
+                print(error)
+            }
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

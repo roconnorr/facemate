@@ -9,6 +9,8 @@
 import UIKit
 
 class TodayAMTableViewController: UITableViewController {
+    
+    private var AMProducts: [Product] = [Product]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,16 @@ class TodayAMTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //need to do some experimenting on how to calculate dates right
+        //possibly need to store acutal dates calculated off intervals
+        let calendar = Calendar.current
+        for prod in Storage.shared.products {
+            //if isDateInToday(prod.startDate)
+            if calendar.isDateInToday(prod.startDate) {
+                print("meme")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
