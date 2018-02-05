@@ -10,6 +10,8 @@ import Foundation
 
 class Storage {
     
+    //TODO: migrate product storage to SQLite, it doesn't make sense to have 2 storage methods for related objects
+    
     static let shared = Storage()
     
     var products = [Product]() {

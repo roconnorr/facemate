@@ -48,8 +48,10 @@ class ProductTableViewController: UITableViewController {
                     print("Product already exists 2")
                 }else{
                     let newIndexPath = IndexPath(row: Storage.shared.products.count, section: 0)
-                    
+                    //set product id
+                    product.id = Storage.shared.products.count + 1
                     Storage.shared.products.append(product)
+                    print(product)
                     tableView.insertRows(at: [newIndexPath], with: .automatic)
                 }
             }

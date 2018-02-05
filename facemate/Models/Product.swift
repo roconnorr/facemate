@@ -28,7 +28,8 @@ class Product: NSObject, NSCoding{
     //make private backing array for categories - make categories enum type and convert with getters/setters
     
     //MARK: Properties
-    //var id: Int
+    //default is 0, should be set by producttableviecontroller
+    var id: Int = 0
     var name: String
     //stored as rawvalue of category enum to work with nscoding
     var categories: [String]
@@ -44,7 +45,7 @@ class Product: NSObject, NSCoding{
 //    fileprivate var repeats_raw: String
     
     override var description: String {
-        return "Name: \(name), Categories: \(categories), Rating: \(rating), StartDate: \(startDate), AM: \(AM), PM: \(PM), Repeats: \(repeats), Notes: \(notes)"
+        return "ID: \(id), Name: \(name), Categories: \(categories), Rating: \(rating), StartDate: \(startDate), AM: \(AM), PM: \(PM), Repeats: \(repeats), Notes: \(notes)"
     }
     
     //MARK: Archiving Paths

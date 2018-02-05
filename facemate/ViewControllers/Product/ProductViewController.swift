@@ -250,21 +250,23 @@ class ProductViewController: FormViewController {
 
 //checks if the name of a product matches any existing products and doesn't allow a clash
 //will need to be tweaked to work with editing
-struct RuleNameUnique<T: Equatable>:RuleType {
-    
-    public init() {}
-    
-    public var id: String?
-    public var validationError: ValidationError = ValidationError(msg: "A Product with that name already exists!.")
-    
-    public func isValid(value: T?) -> ValidationError? {
-        if let str = value as? String {
-            for product in Storage.shared.products {
-                if product.name == str {
-                    return validationError
-                }
-            }
-        }
-        return nil
-    }
-}
+//not needed anymore but left here for reference as to how to make a custom rule
+//struct RuleNameUnique<T: Equatable>:RuleType {
+//
+//    public init() {}
+//
+//    public var id: String?
+//    public var validationError: ValidationError = ValidationError(msg: "A Product with that name already exists!.")
+//
+//    public func isValid(value: T?) -> ValidationError? {
+//        if let str = value as? String {
+//            for product in Storage.shared.products {
+//                if product.name == str {
+//                    return validationError
+//                }
+//            }
+//        }
+//        return nil
+//    }
+//}
+

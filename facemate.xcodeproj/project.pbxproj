@@ -125,8 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				1EB086F31F6E134F0099DCDB /* ProductTableViewController.swift */,
-				1EB086F11F6E11030099DCDB /* ProductTableViewCell.swift */,
 				1E3F22E61F6D12BE0099699E /* ProductViewController.swift */,
+				1EB086F11F6E11030099DCDB /* ProductTableViewCell.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
