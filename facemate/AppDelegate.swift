@@ -21,20 +21,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())
+        let later = Calendar.current.date(byAdding: .day, value: 8, to: Date())
         
         let prod2 = Product(name: "before", categories: ["asdf"], rating: 1, startDate: tomorrow!, AM: true, PM: true, repeats: "Weekly", notes: "asdf")
         prod2.id = 1
         
-        let prod3 = Product(name: "tomorrow", categories: ["asdf"], rating: 1, startDate: Date(), AM: true, PM: true, repeats: "Weekly", notes: "asdf")
+        let prod3 = Product(name: "tomorrow", categories: ["asdf"], rating: 1, startDate: later!, AM: true, PM: true, repeats: "Weekly", notes: "asdf")
         prod3.id = 2
         
         EventDatabase.sharedInstance.addProductToEventDB(product: prod2)
-//        EventDatabase.sharedInstance.addProductToEventDB(prod3)
+        EventDatabase.sharedInstance.addProductToEventDB(product: prod3)
         
         
         print(EventDatabase.sharedInstance.getAllEvents())
+        print("events: \(EventDatabase.sharedInstance.getTodayEvents())")
         
-        print(EventDatabase.sharedInstance.getTodayEvents())
+        var dateComponents = DateComponents()
+        dateComponents.year = 2018
+        dateComponents.month = 2
+        dateComponents.day = 7
+        dateComponents.hour = 1
+        dateComponents.minute = 0
+        
+        // Create date from components
+        let userCalendar = Calendar.current // user calendar
+        let date1 = userCalendar.date(from: dateComponents)
+        
+        var dateComponents2 = DateComponents()
+        dateComponents2.year = 2018
+        dateComponents2.month = 2
+        dateComponents2.day = 10
+        dateComponents2.hour = 40
+        dateComponents2.minute = 0
+        
+        // Create date from components
+        let date2 = userCalendar.date(from: dateComponents2)
+        
+        print(date1)
+        print(date2)
+        print(EventDatabase.sharedInstance.getEventsInRange(startDate: date1!, endDate: date2!))
         
         
         // Override point for customization after application launch.

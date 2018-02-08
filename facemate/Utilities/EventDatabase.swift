@@ -39,7 +39,7 @@ class EventDatabase {
     
     let eventID = Expression<Int64>("event_id")
     let productID = Expression<Int64>("product_id")
-    let date = Expression<String>("date_string")
+    let date = Expression<Date>("date_string")
     let interval = Expression<Int64>("interval")
     
     //is a singleton, cannot be initialized by another class
@@ -68,8 +68,8 @@ class EventDatabase {
     
     //returns all events that should be displayed on the calendar
     //TODO: within a certain date range, return event model instance not tuple
-    func getAllEvents() -> [(Int64, Int64, String, Int64)]{
-        var eventArray = [(Int64, Int64, String, Int64)]()
+    func getAllEvents() -> [(Int64, Int64, Date, Int64)]{
+        var eventArray = [(Int64, Int64, Date, Int64)]()
         
         do {
             for event in try db!.prepare(events){
@@ -87,22 +87,22 @@ class EventDatabase {
 
     }
     
-    //TODO: implement
     //returns all events occuring on todays date
-    func getTodayEvents() -> [(Int64, Int64, String, Int64)]{
-        var eventArray = [(Int64, Int64, String, Int64)]()
+    func getTodayEvents() -> [(Int64, Int64, Date, Int64)]{
+        var eventArray = [(Int64, Int64, Date, Int64)]()
         
-        //makes a string from today's date for comparing with db entries
-        let todayDateString = dateFormatter.string(from: Date())
         do {
-            let query = events.filter(date == todayDateString)
-            
-            for event in try db!.prepare(query){
+            //currently iterate whole db, implement this query to limit it to a sensible range
+            //need an easy way to make Date() + or - 1
+            //let query = events.filter(startDate...endDate ~= date)
+            for event in try db!.prepare(events){
                 let row_eventID = event[eventID]
                 let row_productID = event[productID]
                 let row_date = event[date]
                 let row_interval = event[interval]
-                eventArray.append((row_eventID, row_productID, row_date, row_interval))
+                if(Calendar.current.isDateInToday(row_date)){
+                    eventArray.append((row_eventID, row_productID, row_date, row_interval))
+                }
             }
         } catch {
             print("Could not get today's events from DB: \(error)")
@@ -112,8 +112,24 @@ class EventDatabase {
     }
     
     //returns all events between the given dates
-    func getEventsInRange(startDate: Date, endDate: Date){
+    func getEventsInRange(startDate: Date, endDate: Date) -> [(Int64, Int64, Date, Int64)]{
+        var eventArray = [(Int64, Int64, Date, Int64)]()
         //gets all events where date > start and < end
+        do {
+            let query = events.filter(startDate...endDate ~= date)
+            
+            for event in try db!.prepare(query){
+                let row_eventID = event[eventID]
+                let row_productID = event[productID]
+                let row_date = event[date]
+                let row_interval = event[interval]
+                eventArray.append((row_eventID, row_productID, row_date, row_interval))
+            }
+        } catch {
+            
+        }
+        
+        return eventArray
     }
     
     
@@ -136,15 +152,11 @@ class EventDatabase {
         //TODO: check if event already exists
         
         do {
-            //currently, dates are stored as a string with no time (time not used)
-            //this converts the stored date object to a string
-            let dateString = dateFormatter.string(from: product.startDate)
-            print(dateString)
             
             //checks if the product already has events in the db
             if let productEntryCount = try db?.scalar(events.filter(productID == Int64(product.id)).count) {
                 if productEntryCount == 0 {
-                    try db?.run(events.insert(productID <- Int64(product.id), date <- dateString, interval <- 1))
+                    try db?.run(events.insert(productID <- Int64(product.id), date <- product.startDate, interval <- 1))
                 }
             }
         } catch {
