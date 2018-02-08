@@ -15,10 +15,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-                
-        EventDatabase.sharedInstance.addProductToEventDB(product: Product(name: "Asdf", categories: ["asdf"], rating: 1, startDate: Date(), AM: true, PM: true, repeats: "Weekly", notes: "asdf"))
+        
+        //code for testing database
+        EventDatabase.sharedInstance.addProductToEventDB(product: Product(name: "today", categories: ["asdf"], rating: 1, startDate: Date(), AM: true, PM: true, repeats: "Weekly", notes: "asdf"))
+        
+        
+        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())
+        
+        let prod2 = Product(name: "before", categories: ["asdf"], rating: 1, startDate: tomorrow!, AM: true, PM: true, repeats: "Weekly", notes: "asdf")
+        prod2.id = 1
+        
+        let prod3 = Product(name: "tomorrow", categories: ["asdf"], rating: 1, startDate: Date(), AM: true, PM: true, repeats: "Weekly", notes: "asdf")
+        prod3.id = 2
+        
+        EventDatabase.sharedInstance.addProductToEventDB(product: prod2)
+//        EventDatabase.sharedInstance.addProductToEventDB(prod3)
+        
         
         print(EventDatabase.sharedInstance.getAllEvents())
+        
+        print(EventDatabase.sharedInstance.getTodayEvents())
         
         
         // Override point for customization after application launch.

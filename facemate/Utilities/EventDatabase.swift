@@ -22,6 +22,9 @@ class EventDatabase {
     
     let events = Table("events")
     
+    
+    let dateFormatter = DateFormatter()
+    
     //should make events have more properties -> also make a model object for them
     //an event is an instance of a product being used
     //example param - was it used
@@ -36,11 +39,13 @@ class EventDatabase {
     
     let eventID = Expression<Int64>("event_id")
     let productID = Expression<Int64>("product_id")
-    let date = Expression<Date>("date")
+    let date = Expression<String>("date_string")
     let interval = Expression<Int64>("interval")
     
     //is a singleton, cannot be initialized by another class
     private init(){
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
             ).first!
@@ -48,7 +53,7 @@ class EventDatabase {
         do{
             self.db = try Connection("\(path)/db.sqlite3")
             
-            //try db?.run(events.drop())
+            try db?.run(events.drop())
             //if the events table does not exist, create it
             try db?.run(events.create(ifNotExists: true){ t in
                 t.column(eventID, primaryKey: .autoincrement)
@@ -63,8 +68,8 @@ class EventDatabase {
     
     //returns all events that should be displayed on the calendar
     //TODO: within a certain date range, return event model instance not tuple
-    func getAllEvents() -> [(Int64, Int64, Date, Int64)]{
-        var eventArray = [(Int64, Int64, Date, Int64)]()
+    func getAllEvents() -> [(Int64, Int64, String, Int64)]{
+        var eventArray = [(Int64, Int64, String, Int64)]()
         
         do {
             for event in try db!.prepare(events){
@@ -84,13 +89,31 @@ class EventDatabase {
     
     //TODO: implement
     //returns all events occuring on todays date
-    func getTodayEvents(){
+    func getTodayEvents() -> [(Int64, Int64, String, Int64)]{
+        var eventArray = [(Int64, Int64, String, Int64)]()
         
+        //makes a string from today's date for comparing with db entries
+        let todayDateString = dateFormatter.string(from: Date())
+        do {
+            let query = events.filter(date == todayDateString)
+            
+            for event in try db!.prepare(query){
+                let row_eventID = event[eventID]
+                let row_productID = event[productID]
+                let row_date = event[date]
+                let row_interval = event[interval]
+                eventArray.append((row_eventID, row_productID, row_date, row_interval))
+            }
+        } catch {
+            print("Could not get today's events from DB: \(error)")
+        }
+        
+        return eventArray
     }
     
     //returns all events between the given dates
     func getEventsInRange(startDate: Date, endDate: Date){
-        
+        //gets all events where date > start and < end
     }
     
     
@@ -98,9 +121,11 @@ class EventDatabase {
     //TODO: function to generate new event records into the future
     //should only generate new dates (ones without db records)
     func generateNewEvents(endDate: Date){
-        
+        //get latest event record for each product
+        //for each product, add events until past the enddate
     }
     
+    //use when a product is edited to fix its events
     func regenerateFutureProductEvents(product: Product){
         //deletes all future events for this product
         //remakes necessary events for this product
@@ -111,11 +136,15 @@ class EventDatabase {
         //TODO: check if event already exists
         
         do {
+            //currently, dates are stored as a string with no time (time not used)
+            //this converts the stored date object to a string
+            let dateString = dateFormatter.string(from: product.startDate)
+            print(dateString)
+            
             //checks if the product already has events in the db
             if let productEntryCount = try db?.scalar(events.filter(productID == Int64(product.id)).count) {
                 if productEntryCount == 0 {
-                    //inserts the product's start date as the interval
-                    try db?.run(events.insert(productID <- Int64(product.id), date <- product.startDate, interval <- 1))
+                    try db?.run(events.insert(productID <- Int64(product.id), date <- dateString, interval <- 1))
                 }
             }
         } catch {
